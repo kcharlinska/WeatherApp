@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FF6C64;
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+}
+
+.menu {
+    position: relative;
+    flex-basis: 6%;
+    background-color: #89a3eb;
+
+}
+
+.btn--menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+}
+
+.input-wrapper {
+    display: none;
+}
+
+.curr-weather {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-wrapper {
+    flex-basis: 34%;
+    background-color: #f37eb5;
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast {
+    flex-basis: calc(100%/3);
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.forecast__day {
+    grid-column: 1/span 1;
+    grid-row: 1/ span 2;
+}
+
+.forecast__temp {
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+}
+
+.forecast__desc {
+    grid-column: 2/span 1;
+    grid-row: 2/span 1;
+}
