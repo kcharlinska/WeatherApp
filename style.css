@@ -17,28 +17,73 @@
     display: flex;
     flex-direction: column;
     padding: 10vw;
+    overflow: hidden;
 }
 
 .menu {
-    position: relative;
-    flex-basis: 6%;
-    background-color: #89a3eb;
+    /* position: relative; */
+    /* flex-basis: 6%; */
+    /* background-color: #89a3eb; */
 
 }
 
 .btn--menu {
     position: absolute;
-    top: 0;
-    right: 0;
-    /* transform: translate(-50%, -50%); */
+    top: 10vw;
+    right: 10vw;
+    font-size: 1.4rem;
+    border: none;
+    background-color: transparent;
+    /* transform: translateY(-50%); */
+    color: #c9c9c9;
+    z-index: 1;
 }
 
 .input-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #35477d;
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+    align-items: center;
+    justify-content: center;
     display: none;
 }
 
+.input {
+    font-size: 1.5rem;
+    background-color: #35477d;
+    border: none;
+    border-bottom: 2px solid #4f5a7b;
+    color: #c9c9c9;
+    margin: 10% 0;
+    text-align: center;
+    padding: 5%;
+}
+
+input::placeholder {
+    color: #c9c9c9;
+}
+
+.btn--submit {
+    border: 2px solid #4f5a7b;
+    background-color: #4f5a7b;
+    line-height: 1rem;
+    padding: 2% 5%;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #c9c9c9;
+}
+
+
+
 .curr-weather {
-    flex-basis: 60%;
+    flex-basis: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +91,7 @@
 }
 
 .forecast-wrapper {
-    flex-basis: 34%;
+    flex-basis: 35%;
     background-color: #f37eb5;
     display: flex;
     flex-direction: column;
