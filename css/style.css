@@ -13,7 +13,7 @@
 .app {
     width: 100vw;
     height: 100vh;
-    background-color: #FF6C64;
+    background-color: #c06c84;
     display: flex;
     flex-direction: column;
     padding: 10vw;
@@ -88,6 +88,10 @@ input::placeholder {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.wi {
+    font-size: 4.5rem;
 }
 
 .forecast-wrapper {
