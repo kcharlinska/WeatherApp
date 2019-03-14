@@ -107,29 +107,47 @@ input::placeholder {
 
 .forecast-wrapper {
     flex-basis: 35%;
-    background-color: #f37eb5;
+    /* background-color: #f37eb5; */
     display: flex;
     flex-direction: column;
 }
 
 .forecast {
+    position: relative;
     flex-basis: calc(100%/3);
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
+    border-bottom: 1px solid #c9c9c9;
+    font-size: .9rem;
+    /* line-height: calc(100%/3); */
+    vertical-align: middle;
+    margin-bottom: 5%;
 }
 
 .forecast__day {
     grid-column: 1/span 1;
     grid-row: 1/ span 2;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .forecast__temp {
     grid-column: 2/span 1;
     grid-row: 1/span 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .forecast__desc {
     grid-column: 2/span 1;
     grid-row: 2/span 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
