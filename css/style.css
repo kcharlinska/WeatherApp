@@ -11,6 +11,7 @@
 }
 
 .app {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: #c06c84;
@@ -128,7 +129,7 @@ input::placeholder {
     font-size: .9rem;
     /* line-height: calc(100%/3); */
     vertical-align: middle;
-    margin-bottom: 5%;
+    margin-bottom: 10px;
 }
 
 .forecast__day {
