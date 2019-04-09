@@ -1,3 +1,26 @@
+const city = document.querySelector('.curr-weather__city');
+const temp = document.querySelector('.curr-weather__temp');
+const icon = document.querySelector('.curr-weather i');
+
+const getUserWeather = () => {
+    const success = (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const Url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&APPID=0c3984878742697ffa63809549271e91`;
+        getData(Url);
+    }
+    const error = () => {
+        city.textContent = 'Unable to retrieve your location';
+    }
+    //Check if browser supports W3C Geolocation API
+    if (!navigator.geolocation) {
+        city.textContent = 'Geolocation is not supported by your browser';
+    } else {
+        city.textContent = 'Locating…';
+        navigator.geolocation.getCurrentPosition(success, error);
+    }
+}
+
 const getPickedWeather = () => {
     const input = document.querySelector('.input').value;
     const Url = `https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&APPID=0c3984878742697ffa63809549271e91`;
@@ -95,6 +118,18 @@ const getData = (Url) => {
 const toggleDisplay = () => {
     document.querySelector('.input-wrapper').classList.toggle('active');
 }
+
+const clearContent = () => {
+    icon.classList = '';
+    temp.textContent = '';
+    for (let i = 0; i < 3; i++) {
+        document.querySelector(`.day${i} .forecast__day`).textContent = '';
+        document.querySelector(`.day${i} .forecast__temp`).textContent = '';
+        document.querySelector(`.day${i} .forecast__desc`).textContent = '';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getUserWeather)
 
 document.querySelector('.btn--submit').addEventListener('click', getPickedWeather);
 
