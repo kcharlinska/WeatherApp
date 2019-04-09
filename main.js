@@ -25,7 +25,42 @@ const getData = (Url) => {
                 city.textContent = "Correct your city";
                 clearContent();
             } else {
-                console.log(data)
+                // Display city
+                document.querySelector('.curr-weather__city').textContent = data.city.name;
+
+                // Create array with all needed data
+                const weatherData = [];
+                const dayNames = [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday'
+                ];
+                data.list.forEach(item => {
+                    weatherData.push({
+                        date: item.dt_txt,
+                        time: item.sys.pod,
+                        day: dayNames[new Date(item.dt_txt).getDay()],
+                        temp: item.main.temp,
+                        icon: item.weather[0].id,
+                        description: item.weather[0].main
+                    })
+                })
+                console.log(weatherData);
+
+                // Display current weather data
+                // Display current temperature
+                const currTemp = Math.floor(weatherData[0].temp);
+                document.querySelector('.curr-weather__temp').textContent = `${currTemp} °C`;
+                // Display current weather icon
+                const timeOfDay = (weatherData[0].time === 'd') ? 'day' : 'night';
+                const icon = document.querySelector('.curr-weather i');
+                icon.className = `wi-owm-${timeOfDay}-${weatherData[0].icon}`;
+                icon.classList.add('wi');
+
             }
         })
 }
