@@ -60,7 +60,35 @@ const getData = (Url) => {
                 const icon = document.querySelector('.curr-weather i');
                 icon.className = `wi-owm-${timeOfDay}-${weatherData[0].icon}`;
                 icon.classList.add('wi');
+                // Get forecast data
+                const getForecastData = (item) => {
+                    return (item.day !== weatherData[0].day);
+                }
+                const forecastData = weatherData.filter(getForecastData);
+                console.log(forecastData);
 
+                // Get forecast by day with max temperature
+                const forecastByDay = []
+                const getForecastDay = (dayData) => {
+                    console.log(dayData);
+                    const forecastDayMax = dayData.reduce(function (prev, curr) {
+                        return (prev.temp >= curr.temp) ? prev : curr;
+                    })
+                    console.log(forecastDayMax);
+                    forecastByDay.push(forecastDayMax);
+                }
+                for (let i = 0; i < forecastData.length; i += 8) {
+                    let j = i + 8;
+                    getForecastDay(forecastData.slice(i, j));
+                }
+                console.log(forecastByDay);
+
+                // Display forecast
+                for (let i = 0; i < 3; i++) {
+                    document.querySelector(`.day${i} .forecast__day`).textContent = forecastByDay[i].day;
+                    document.querySelector(`.day${i} .forecast__temp`).textContent = `${Math.floor(forecastByDay[i].temp)} °C`;
+                    document.querySelector(`.day${i} .forecast__desc`).textContent = forecastByDay[i].description;
+                }
             }
         })
 }
