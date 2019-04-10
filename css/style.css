@@ -10,10 +10,15 @@
     font-size: 18px;
 }
 
-.app {
-    position: relative;
+body {
     width: 100vw;
     height: 100vh;
+}
+
+.app {
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-color: #c06c84;
     display: flex;
     flex-direction: column;
@@ -21,21 +26,13 @@
     overflow: hidden;
 }
 
-.menu {
-    /* position: relative; */
-    /* flex-basis: 6%; */
-    /* background-color: #89a3eb; */
-
-}
-
 .btn__menu {
     position: absolute;
-    top: 10vw;
+    top: 5%;
     font-size: 1.2rem;
     padding: 10px;
     border: none;
     background-color: transparent;
-    /* transform: translateY(-50%); */
     color: #c9c9c9;
     z-index: 1;
     transition: .5s;
@@ -46,7 +43,7 @@
 }
 
 .btn__menu--geo {
-    left: 10vw;
+    left: 10%;
     transform: scale(1) rotate(-90deg);
 }
 
@@ -55,7 +52,7 @@
 }
 
 .btn__menu--disp {
-    right: 10vw;
+    right: 10%;
     transform: rotate(0);
 }
 
@@ -85,15 +82,14 @@
     position: absolute;
     top: 0;
     right: -100%;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #35477d;
     display: flex;
     flex-direction: column;
     padding: 10vw;
     align-items: center;
     justify-content: center;
-    /* display: none; */
     z-index: 1;
     transition: .5s;
 }
@@ -135,8 +131,6 @@ input::placeholder {
     background-color: #7983a7;
 }
 
-
-
 .curr-weather {
     flex-basis: 65%;
     display: flex;
@@ -155,14 +149,8 @@ input::placeholder {
     font-size: 1.2rem;
 }
 
-/* .curr-weather__temp {
-    margin: 2%;
-} */
-
-
 .forecast-wrapper {
     flex-basis: 35%;
-    /* background-color: #f37eb5; */
     display: flex;
     flex-direction: column;
 }
@@ -175,7 +163,6 @@ input::placeholder {
     grid-template-rows: 1fr 1fr;
     border-bottom: 1px solid #c9c9c9;
     font-size: .9rem;
-    /* line-height: calc(100%/3); */
     vertical-align: middle;
     margin-bottom: 10px;
 }
@@ -205,4 +192,25 @@ input::placeholder {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+}
+
+@media (min-width: 599px) {
+
+    body {
+        background: #717171;
+        overflow: hidden;
+    }
+
+    .app {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 350px;
+        max-height: 600px;
+        padding: 40px;
+        border-radius: 10px;
+        border: 2px solid #222222;
+        box-shadow: 5px 5px 5px #575757;
+    }
 }
