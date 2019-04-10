@@ -122,6 +122,7 @@ let active = true;
 const toggleDisplay = () => {
     btnMenu.classList.toggle('active');
     menuWrapper.classList.toggle('active');
+    document.querySelectorAll('.btn__menu').forEach(item => item.classList.toggle('show'));
     if (active) {
         setTimeout(() => {
             input.focus();

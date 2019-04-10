@@ -31,18 +31,27 @@
 .btn__menu {
     position: absolute;
     top: 10vw;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    padding: 10px;
     border: none;
     background-color: transparent;
     /* transform: translateY(-50%); */
     color: #c9c9c9;
-    z-index: 2;
-    transition: .4s;
+    z-index: 1;
+    transition: .5s;
+}
+
+.btn__menu.show {
+    animation: showBtns .8s linear both;
 }
 
 .btn__menu--geo {
     left: 10vw;
-    transform: rotate(-75deg);
+    transform: scale(1) rotate(-90deg);
+}
+
+.btn__menu--geo:hover {
+    transform: scale(1.2) rotate(-90deg);
 }
 
 .btn__menu--disp {
@@ -50,8 +59,26 @@
     transform: rotate(0);
 }
 
+.btn__menu--disp:hover {
+    transform: scale(1.2) rotate(0);
+}
+
 .btn__menu--disp.active {
     transform: rotate(90deg);
+}
+
+.btn__menu--disp.active:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+@keyframes showBtns {
+    90% {
+        z-index: 1;
+    }
+
+    100% {
+        z-index: 2;
+    }
 }
 
 .input-wrapper {
