@@ -141,14 +141,19 @@ const clearContent = () => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', getUserWeather)
+btnMenu.addEventListener('click', toggleDisplay);
 
+// Actions to show weather by geolocation
+document.addEventListener('DOMContentLoaded', getUserWeather);
+document.querySelector('.btn__menu--geo').addEventListener('click', () => {
+    getUserWeather();
+    if (menuWrapper.classList.contains('active')) toggleDisplay();
+});
+
+// Actions to show weather by picked city
 document.querySelector('.btn__submit').addEventListener('click', getPickedWeather);
-
 menuWrapper.addEventListener('keypress', (e) => {
     if ((e.keyCode == 13) && (!!input.value) && (menuWrapper.classList.contains('active'))) {
         getPickedWeather();
     }
 });
-
-btnMenu.addEventListener('click', toggleDisplay);
