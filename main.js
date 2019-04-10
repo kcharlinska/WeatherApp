@@ -1,3 +1,5 @@
+const input = document.querySelector('.input');
+const menuWrapper = document.querySelector('.input-wrapper');
 const city = document.querySelector('.curr-weather__city');
 const temp = document.querySelector('.curr-weather__temp');
 const icon = document.querySelector('.curr-weather i');
@@ -22,8 +24,7 @@ const getUserWeather = () => {
 }
 
 const getPickedWeather = () => {
-    const input = document.querySelector('.input').value;
-    const Url = `https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&APPID=0c3984878742697ffa63809549271e91`;
+    const Url = `https://api.openweathermap.org/data/2.5/forecast?q=${input.value}&units=metric&APPID=0c3984878742697ffa63809549271e91`;
     getData(Url);
     toggleDisplay();
 }
@@ -114,8 +115,15 @@ const getData = (Url) => {
         })
 }
 
+let active = true;
 const toggleDisplay = () => {
-    document.querySelector('.input-wrapper').classList.toggle('active');
+    menuWrapper.classList.toggle('active');
+    if (active) {
+        setTimeout(() => {
+            input.focus();
+        }, 500);
+    }
+    active = !active;
 }
 
 const clearContent = () => {
@@ -131,5 +139,11 @@ const clearContent = () => {
 document.addEventListener('DOMContentLoaded', getUserWeather)
 
 document.querySelector('.btn--submit').addEventListener('click', getPickedWeather);
+
+menuWrapper.addEventListener('keypress', (e) => {
+    if ((e.keyCode == 13) && (!!input.value) && (menuWrapper.classList.contains('active'))) {
+        getPickedWeather();
+    }
+});
 
 document.querySelector('.btn--menu').addEventListener('click', toggleDisplay);
