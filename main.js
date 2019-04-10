@@ -126,6 +126,7 @@ const toggleDisplay = () => {
         setTimeout(() => {
             input.focus();
         }, 500);
+        input.value = '';
     }
     active = !active;
 }
