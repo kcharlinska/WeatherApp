@@ -1,4 +1,4 @@
-const btnMenu = document.querySelector('.btn--menu');
+const btnMenu = document.querySelector('.btn__menu--disp');
 const input = document.querySelector('.input');
 const menuWrapper = document.querySelector('.input-wrapper');
 const city = document.querySelector('.curr-weather__city');
@@ -143,7 +143,7 @@ const clearContent = () => {
 
 document.addEventListener('DOMContentLoaded', getUserWeather)
 
-document.querySelector('.btn--submit').addEventListener('click', getPickedWeather);
+document.querySelector('.btn__submit').addEventListener('click', getPickedWeather);
 
 menuWrapper.addEventListener('keypress', (e) => {
     if ((e.keyCode == 13) && (!!input.value) && (menuWrapper.classList.contains('active'))) {

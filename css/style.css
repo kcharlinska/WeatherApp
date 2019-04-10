@@ -28,21 +28,29 @@
 
 }
 
-.btn--menu {
+.btn__menu {
     position: absolute;
     top: 10vw;
-    right: 10vw;
     font-size: 1.4rem;
     border: none;
     background-color: transparent;
     /* transform: translateY(-50%); */
     color: #c9c9c9;
     z-index: 2;
-    transform: rotate(0);
     transition: .4s;
 }
 
-.btn--menu.active {
+.btn__menu--geo {
+    left: 10vw;
+    transform: rotate(-75deg);
+}
+
+.btn__menu--disp {
+    right: 10vw;
+    transform: rotate(0);
+}
+
+.btn__menu--disp.active {
     transform: rotate(90deg);
 }
 
@@ -82,7 +90,7 @@ input::placeholder {
     color: #c9c9c9;
 }
 
-.btn--submit {
+.btn__submit {
     border: 2px solid #4f5a7b;
     background-color: #4f5a7b;
     line-height: 1rem;
@@ -95,7 +103,7 @@ input::placeholder {
     transition: .4s;
 }
 
-.btn--submit:hover {
+.btn__submit:hover {
     border: 2px solid #7983a7;
     background-color: #7983a7;
 }
