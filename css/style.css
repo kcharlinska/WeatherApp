@@ -38,6 +38,12 @@
     /* transform: translateY(-50%); */
     color: #c9c9c9;
     z-index: 2;
+    transform: rotate(0);
+    transition: .4s;
+}
+
+.btn--menu.active {
+    transform: rotate(90deg);
 }
 
 .input-wrapper {
@@ -85,6 +91,13 @@ input::placeholder {
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     color: #c9c9c9;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.btn--submit:hover {
+    border: 2px solid #7983a7;
+    background-color: #7983a7;
 }
 
 
