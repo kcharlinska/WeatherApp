@@ -104,7 +104,7 @@ body {
     border: none;
     border-bottom: 2px solid #4f5a7b;
     color: #c9c9c9;
-    margin: 10% 0;
+    margin: 15% 0;
     text-align: center;
     padding: 5%;
 }
@@ -117,7 +117,7 @@ input::placeholder {
     border: 2px solid #4f5a7b;
     background-color: #4f5a7b;
     line-height: 1rem;
-    padding: 2% 5%;
+    padding: 5% 8%;
     font-size: .8rem;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
@@ -141,12 +141,14 @@ input::placeholder {
 
 .wi {
     font-size: 5rem;
+    margin: 2%;
 }
 
 .curr-weather__city {
     margin: 2%;
     /* font-weight: bold; */
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .forecast-wrapper {
@@ -170,28 +172,25 @@ input::placeholder {
 .forecast__day {
     grid-column: 1/span 1;
     grid-row: 1/ span 2;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
 }
 
 .forecast__temp {
     grid-column: 2/span 1;
     grid-row: 1/span 1;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .forecast__desc {
     grid-column: 2/span 1;
     grid-row: 2/span 1;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 599px) {
