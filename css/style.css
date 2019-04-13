@@ -194,7 +194,30 @@ input::placeholder {
     justify-content: center;
 }
 
-@media (min-width: 599px) {
+@media screen and (orientation: landscape) and (max-width: 825px) and (max-height: 420px) {
+    .app {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .curr-weather {
+        flex-basis: 50%;
+    }
+
+    .forecast-wrapper {
+        flex-basis: 50%;
+        height: 80%;
+        align-items: center;
+    }
+
+    .forecast {
+        width: 80%;
+    }
+}
+
+
+@media screen and (min-width: 826px) {
 
     body {
         background: #717171;
