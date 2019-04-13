@@ -22,7 +22,7 @@ body {
     background-color: #c06c84;
     display: flex;
     flex-direction: column;
-    padding: 10vw;
+    padding: 10%;
     overflow: hidden;
 }
 
@@ -87,7 +87,7 @@ body {
     background-color: #35477d;
     display: flex;
     flex-direction: column;
-    padding: 10vw;
+    padding: 10%;
     align-items: center;
     justify-content: center;
     z-index: 1;
@@ -99,6 +99,7 @@ body {
 }
 
 .input {
+    width: 100%;
     font-size: 1.4rem;
     background-color: #35477d;
     border: none;
