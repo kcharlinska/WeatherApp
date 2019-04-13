@@ -6,6 +6,7 @@ const temp = document.querySelector('.curr-weather__temp');
 const icon = document.querySelector('.curr-weather i');
 
 const getUserWeather = () => {
+    clearContent();
     const success = (position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
