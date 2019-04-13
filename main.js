@@ -63,7 +63,8 @@ const getData = (Url) => {
                 weatherData.push({
                     date: item.dt_txt,
                     time: item.sys.pod,
-                    day: dayNames[new Date(item.dt_txt).getDay()],
+                    // change data format for Safari: replace '-' on '/'
+                    day: dayNames[new Date(item.dt_txt.replace(/-/g, "/")).getDay()],
                     temp: item.main.temp,
                     icon: item.weather[0].id,
                     description: item.weather[0].main
