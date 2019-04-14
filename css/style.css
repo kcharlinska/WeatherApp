@@ -105,7 +105,7 @@ body {
     border: none;
     border-bottom: 2px solid #4f5a7b;
     color: #c9c9c9;
-    margin: 15% 0;
+    margin: 10% 0;
     text-align: center;
     padding: 5%;
 }
@@ -114,11 +114,18 @@ input::placeholder {
     color: #c9c9c9;
 }
 
+input [type='submit'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
 .btn__submit {
-    border: 2px solid #4f5a7b;
+    border: none;
     background-color: #4f5a7b;
-    line-height: 1rem;
-    padding: 5% 8%;
+    /* line-height: 1rem; */
+    padding: 2% 8%;
     font-size: .8rem;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
@@ -128,9 +135,10 @@ input::placeholder {
 }
 
 .btn__submit:hover {
-    border: 2px solid #7983a7;
-    background-color: #7983a7;
+    /* border: 2px solid #7983a7; */
+    background-color: #6c7387;
 }
+
 
 .curr-weather {
     flex-basis: 65%;
