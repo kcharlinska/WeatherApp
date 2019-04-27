@@ -7,5 +7,5 @@
 * JavaScript
 
 ## App demo
-* https://kcharlinska.github.io/WeatherApp/
-![Preview](https://kcharlinska.github.io/WeatherApp/blob/master/img/preview.png)
+https://kcharlinska.github.io/WeatherApp/
+![Preview](https://github.com/kcharlinska/WeatherApp/blob/master/img/preview.png)
