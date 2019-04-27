@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -20,7 +21,12 @@ body {
     width: 100%;
     height: 100%;
     background-color: #c06c84;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 10%;
     overflow: hidden;
@@ -35,37 +41,55 @@ body {
     background-color: transparent;
     color: #c9c9c9;
     z-index: 1;
+    -webkit-transition: .5s;
     transition: .5s;
 }
 
 .btn__menu.show {
+    -webkit-animation: showBtns .8s linear both;
     animation: showBtns .8s linear both;
 }
 
 .btn__menu--geo {
     left: 10%;
+    -webkit-transform: scale(1) rotate(-90deg);
     transform: scale(1) rotate(-90deg);
 }
 
 .btn__menu--geo:hover {
+    -webkit-transform: scale(1.2) rotate(-90deg);
     transform: scale(1.2) rotate(-90deg);
 }
 
 .btn__menu--disp {
     right: 10%;
+    -webkit-transform: rotate(0);
     transform: rotate(0);
 }
 
 .btn__menu--disp:hover {
+    -webkit-transform: scale(1.2) rotate(0);
     transform: scale(1.2) rotate(0);
 }
 
 .btn__menu--disp.active {
+    -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
 .btn__menu--disp.active:hover {
+    -webkit-transform: scale(1.2) rotate(90deg);
     transform: scale(1.2) rotate(90deg);
+}
+
+@-webkit-keyframes showBtns {
+    90% {
+        z-index: 1;
+    }
+
+    100% {
+        z-index: 2;
+    }
 }
 
 @keyframes showBtns {
@@ -85,12 +109,22 @@ body {
     width: 100%;
     height: 100%;
     background-color: #35477d;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 10%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     z-index: 1;
+    -webkit-transition: .5s;
     transition: .5s;
 }
 
@@ -110,6 +144,18 @@ body {
     padding: 5%;
 }
 
+input::-webkit-input-placeholder {
+    color: #c9c9c9;
+}
+
+input:-ms-input-placeholder {
+    color: #c9c9c9;
+}
+
+input::-ms-input-placeholder {
+    color: #c9c9c9;
+}
+
 input::placeholder {
     color: #c9c9c9;
 }
@@ -124,27 +170,35 @@ input [type='submit'] {
 .btn__submit {
     border: none;
     background-color: #4f5a7b;
-    /* line-height: 1rem; */
     padding: 2% 8%;
     font-size: .8rem;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     color: #c9c9c9;
     border-radius: 5px;
+    -webkit-transition: .4s;
     transition: .4s;
 }
 
 .btn__submit:hover {
-    /* border: 2px solid #7983a7; */
     background-color: #6c7387;
 }
 
-
 .curr-weather {
+    -ms-flex-preferred-size: 65%;
     flex-basis: 65%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -155,19 +209,25 @@ input [type='submit'] {
 
 .curr-weather__city {
     margin: 2%;
-    /* font-weight: bold; */
     font-size: 1.2rem;
     text-align: center;
 }
 
 .forecast-wrapper {
+    -ms-flex-preferred-size: 35%;
     flex-basis: 35%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .forecast {
     position: relative;
+    -ms-flex-preferred-size: calc(100%/3);
     flex-basis: calc(100%/3);
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -181,7 +241,11 @@ input [type='submit'] {
 .forecast__day {
     grid-column: 1/span 1;
     grid-row: 1/ span 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-size: 1rem;
 }
@@ -189,33 +253,56 @@ input [type='submit'] {
 .forecast__temp {
     grid-column: 2/span 1;
     grid-row: 1/span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .forecast__desc {
     grid-column: 2/span 1;
     grid-row: 2/span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 @media screen and (orientation: landscape) and (max-width: 825px) and (max-height: 420px) {
     .app {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
     .curr-weather {
+        -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
     }
 
     .forecast-wrapper {
+        -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
         height: 80%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -236,12 +323,14 @@ input [type='submit'] {
         position: absolute;
         top: 50%;
         left: 50%;
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         max-width: 350px;
         max-height: 600px;
         padding: 40px;
         border-radius: 10px;
         border: 2px solid #222222;
+        -webkit-box-shadow: 5px 5px 5px #575757;
         box-shadow: 5px 5px 5px #575757;
     }
 }
